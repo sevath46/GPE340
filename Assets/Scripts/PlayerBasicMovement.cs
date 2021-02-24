@@ -17,7 +17,6 @@ public class PlayerBasicMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Grabbing component variales
         rb = GetComponent<Rigidbody>();
         animate = GetComponent<Animator>();
     }
@@ -39,9 +38,9 @@ public class PlayerBasicMovement : MonoBehaviour
         {
             animate.SetBool("Walking", true);
         }
-        else 
+        else if (!Input.GetKey(KeyCode.Mouse1)) 
         { 
-            animate.SetBool("Walking", false); 
+            animate.SetBool("Walking", false);
         }
     }
     void PlayerMovement(float moveSpeed)
