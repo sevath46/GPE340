@@ -40,6 +40,7 @@ public class PlayerBasicMovement : MonoBehaviour
         }
         else if (!Input.GetKey(KeyCode.Mouse1)) 
         { 
+            //If we are not moving using WASD or mouse, stop animatioon.
             animate.SetBool("Walking", false);
         }
     }
