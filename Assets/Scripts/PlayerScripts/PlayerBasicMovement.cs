@@ -8,7 +8,6 @@ public class PlayerBasicMovement : MonoBehaviour
     public float movementSpeed;
     public float jumpHeight;
     //Jumping variables
-    private bool canMove;
     private bool isGrounded;
     //Compoonent variables
     private Rigidbody rb;
@@ -31,14 +30,25 @@ public class PlayerBasicMovement : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpHeight);
             isGrounded = false;
+            animate.SetBool("Walking", false);
             animate.SetBool("Jump", true);
         }
         //Animation for when the player is movinng.
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) && canMove)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W))
         {
             animate.SetBool("Walking", true);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                animate.SetBool("Walking", false);
+                animate.SetBool("Run", true);
+                PlayerMovement(movementSpeed * 1.5f);
+            }
+            else 
+            {
+                animate.SetBool("Run", false);
+            }
         }
-        else if (!Input.GetKey(KeyCode.Mouse1)) 
+        else 
         { 
             //If we are not moving using WASD or mouse, stop animatioon.
             animate.SetBool("Walking", false);
