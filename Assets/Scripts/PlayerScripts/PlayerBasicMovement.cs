@@ -37,11 +37,12 @@ public class PlayerBasicMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W))
         {
             animate.SetBool("Walking", true);
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && PlayerStats.currStamina > 0)
             {
                 animate.SetBool("Walking", false);
                 animate.SetBool("Run", true);
                 PlayerMovement(movementSpeed * 1.5f);
+                PlayerStats.currStamina--;
             }
             else 
             {
