@@ -37,8 +37,10 @@ public class PlayerBasicMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W))
         {
             animate.SetBool("Walking", true);
+            //If we are able to run when left shift is pressed
             if (Input.GetKey(KeyCode.LeftShift) && PlayerStats.currStamina > 0)
             {
+                //Play the running animation, and take away from our current stamina.
                 animate.SetBool("Walking", false);
                 animate.SetBool("Run", true);
                 PlayerMovement(movementSpeed * 1.5f);
@@ -46,6 +48,7 @@ public class PlayerBasicMovement : MonoBehaviour
             }
             else 
             {
+                //We can not run.
                 animate.SetBool("Run", false);
             }
         }
@@ -65,10 +68,14 @@ public class PlayerBasicMovement : MonoBehaviour
         //This setting moves our player based on the value of playerMovement, using the RIGIDBODY attached to the player.
         transform.Translate(playerMovement, Space.Self);
     }
+
+    //Collider detection
     void OnCollisionEnter(Collision col) 
     {
+        //If we are hitting a ground
         if (col.gameObject.tag == "Ground") 
         {
+            //We are grounded and can jump.
             isGrounded = true;
             animate.SetBool("Jump", false);
         }
