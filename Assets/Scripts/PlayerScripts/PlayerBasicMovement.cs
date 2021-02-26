@@ -79,5 +79,14 @@ public class PlayerBasicMovement : MonoBehaviour
             isGrounded = true;
             animate.SetBool("Jump", false);
         }
+
+    }
+    void OnTriggerEnter(Collider col)
+    {         
+        if (col.gameObject.tag == "Pistol") 
+        {
+            animate.SetBool("Pistol", true);
+            Destroy(col.gameObject);
+        }
     }
 }
