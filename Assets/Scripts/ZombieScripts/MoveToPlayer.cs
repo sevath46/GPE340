@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveToPlayer : MonoBehaviour
 {
+    public bool canMove;
     //Float for the eyes of the zombie
     public float viewRange;
     //how fast the zombie will move
@@ -23,7 +24,7 @@ public class MoveToPlayer : MonoBehaviour
     void Update()
     {
         //if our target is within range of our eyes
-        if (Vector3.Distance(transform.position, target.transform.position) <= viewRange)
+        if (Vector3.Distance(transform.position, target.transform.position) <= viewRange && !animate.GetBool("Death"))
         {
             //we willl start an animation to walk
             animate.SetBool("Walk", true);

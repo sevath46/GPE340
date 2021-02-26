@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class Bullet : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy") 
         {
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<ZombieStats>().health -= damage;
             Destroy(this.gameObject);
         }
     }
