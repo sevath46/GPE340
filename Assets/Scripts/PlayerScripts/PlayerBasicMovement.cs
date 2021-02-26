@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBasicMovement : MonoBehaviour
 {
+    public GameObject pistol;
     //Moving variables
     public float movementSpeed;
     public float jumpHeight;
@@ -85,6 +86,7 @@ public class PlayerBasicMovement : MonoBehaviour
     {         
         if (col.gameObject.tag == "Pistol") 
         {
+            pistol.SetActive(true);
             animate.SetBool("Pistol", true);
             Destroy(col.gameObject);
         }
