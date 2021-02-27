@@ -7,6 +7,7 @@ public class WeaponBehavior : MonoBehaviour
     public string currWeapon;
     public GameObject pistolBullet, rifleBullet;
     public float pistolBulletSpeed, rifleBulletSpeed;
+    public Animator pistolAnimation;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class WeaponBehavior : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                this.GetComponent<Animator>().SetTrigger("Fire");
+                pistolAnimation.SetTrigger("Fire");
                 GameObject instantBullet = Instantiate(pistolBullet, transform.position, Quaternion.identity) as GameObject;
                 instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * pistolBulletSpeed);
             }

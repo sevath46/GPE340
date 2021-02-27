@@ -386,6 +386,7 @@ MonoBehaviour:
   rifleBullet: {fileID: 0}
   pistolBulletSpeed: 450
   rifleBulletSpeed: 0
+  pistolAnimation: {fileID: 1627219682}
 --- !u!114 &289466069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2092,6 +2093,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1627219682 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2105925590737498030, guid: 4588f0c1b0eadf54f9c3d1096092d5dc, type: 3}
+  m_PrefabInstance: {fileID: 421625687450268962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1643178446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2466,6 +2472,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2105925590737498030, guid: 4588f0c1b0eadf54f9c3d1096092d5dc, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 14e3a08c788f95e4082924045f088a30, type: 3}
     - target: {fileID: 2105925590737498030, guid: 4588f0c1b0eadf54f9c3d1096092d5dc, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
