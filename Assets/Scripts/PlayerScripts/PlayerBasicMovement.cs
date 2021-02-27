@@ -19,7 +19,7 @@ public class PlayerBasicMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animate = GetComponent<Animator>();
-}
+    }
 
     // Update is called once per frame
     void Update()
@@ -86,7 +86,7 @@ public class PlayerBasicMovement : MonoBehaviour
     {         
         if (col.gameObject.tag == "Pistol") 
         {
-            animate.SetInteger("Weapon", 1);
+            animate.SetInteger("Weapon", (int)WeaponType.EquippedWeapon.Pistol);
             pistol.SetActive(true);
             Destroy(col.gameObject);
         }
