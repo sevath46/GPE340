@@ -382,6 +382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currWeapon: 
+  pistolBullet: {fileID: 1122964723992546, guid: 674adf642abf5614aae2995443c8250f, type: 3}
+  rifleBullet: {fileID: 0}
+  pistolBulletSpeed: 450
+  rifleBulletSpeed: 0
 --- !u!114 &289466069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,5 +2478,6 @@ PrefabInstance:
       propertyPath: m_MotionVectors
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 68238907, guid: 4588f0c1b0eadf54f9c3d1096092d5dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4588f0c1b0eadf54f9c3d1096092d5dc, type: 3}

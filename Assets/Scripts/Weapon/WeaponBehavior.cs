@@ -5,6 +5,8 @@ using UnityEngine;
 public class WeaponBehavior : MonoBehaviour
 {
     public string currWeapon;
+    public GameObject pistolBullet, rifleBullet;
+    public float pistolBulletSpeed, rifleBulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +22,19 @@ public class WeaponBehavior : MonoBehaviour
         }
         else if ((int)WeaponType.playerWeaponType == 1)
         {
-            Debug.Log("Fire weapon 1.");
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                this.GetComponent<Animator>().SetTrigger("Fire");
+                GameObject instantBullet = Instantiate(pistolBullet, transform.position, Quaternion.identity) as GameObject;
+                instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * pistolBulletSpeed);
+            }
         }
         else if ((int)WeaponType.playerWeaponType == 2) 
         {
-            Debug.Log("Fire weapon 2.");
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                this.GetComponent<Animator>().SetTrigger("Fire");
+            }
         }
     }
 }
