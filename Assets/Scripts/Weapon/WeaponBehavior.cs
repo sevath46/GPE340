@@ -31,7 +31,7 @@ public class WeaponBehavior : MonoBehaviour
         }
         else if ((int)WeaponType.playerWeaponType == 2) 
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 this.GetComponent<Animator>().SetTrigger("Fire");
             }
