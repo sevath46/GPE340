@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WeaponType : MonoBehaviour
 {
+    public static EquippedWeapon playerWeaponType;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        playerWeaponType = EquippedWeapon.None;
     }
 
     // Update is called once per frame
@@ -20,5 +21,6 @@ public class WeaponType : MonoBehaviour
     {
         None = 0,
         Pistol = 1,
+        AssaultRifle = 2,
     }
 }

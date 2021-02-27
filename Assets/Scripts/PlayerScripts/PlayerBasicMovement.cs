@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBasicMovement : MonoBehaviour
 {
-    public GameObject pistol;
+    public GameObject pistol, assaultRifle;
     //Moving variables
     public float movementSpeed;
     public float jumpHeight;
@@ -86,8 +86,18 @@ public class PlayerBasicMovement : MonoBehaviour
     {         
         if (col.gameObject.tag == "Pistol") 
         {
+            WeaponType.playerWeaponType = WeaponType.EquippedWeapon.Pistol;
             animate.SetInteger("Weapon", (int)WeaponType.EquippedWeapon.Pistol);
             pistol.SetActive(true);
+            assaultRifle.SetActive(false);
+            Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "AssaultRifle") 
+        {
+            WeaponType.playerWeaponType = WeaponType.EquippedWeapon.AssaultRifle;
+            animate.SetInteger("Weapon", (int)WeaponType.EquippedWeapon.AssaultRifle);
+            pistol.SetActive(false);
+            assaultRifle.SetActive(true);
             Destroy(col.gameObject);
         }
     }
