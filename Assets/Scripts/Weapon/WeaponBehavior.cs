@@ -8,6 +8,9 @@ public class WeaponBehavior : MonoBehaviour
     public GameObject pistolBullet, rifleBullet;
     public float pistolBulletSpeed, rifleBulletSpeed;
     public Animator pistolAnimation;
+
+
+    public Transform leftHandIKTarget, rightHandIKTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +35,25 @@ public class WeaponBehavior : MonoBehaviour
         }
         else if ((int)WeaponType.playerWeaponType == 2) 
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0))
             {
                 this.GetComponent<Animator>().SetTrigger("Fire");
             }
+        }
+    }
+    protected virtual void OnAnimatorIK() 
+    {
+        if ((int)WeaponType.playerWeaponType == 2) 
+        {
+            this.GetComponent<Animator>().SetIKPosition(AvatarIKGoal.RightHand, rightHandIKTarget.position);
+            this.GetComponent<Animator>().SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
+            this.GetComponent<Animator>().SetIKRotation(AvatarIKGoal.RightHand, rightHandIKTarget.rotation);
+            this.GetComponent<Animator>().SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
+
+            this.GetComponent<Animator>().SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKTarget.position);
+            this.GetComponent<Animator>().SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
+            this.GetComponent<Animator>().SetIKRotation(AvatarIKGoal.LeftHand, leftHandIKTarget.rotation);
+            this.GetComponent<Animator>().SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
         }
     }
 }
