@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class WeaponBehavior : MonoBehaviour
 {
+    public bool canShoot;
     public string currWeapon;
     public GameObject pistolBullet, rifleBullet;
-    public float pistolBulletSpeed, rifleBulletSpeed;
+    public float pistolBulletSpeed, rifleBulletSpeed, pistolFireRate, assaultRifleFireRate;
     public Animator pistolAnimation;
 
 
@@ -15,6 +16,7 @@ public class WeaponBehavior : MonoBehaviour
     void Start()
     {
         currWeapon = "none";
+        canShoot = true;
     }
 
     // Update is called once per frame
@@ -22,12 +24,14 @@ public class WeaponBehavior : MonoBehaviour
     {
         if ((int)WeaponType.playerWeaponType == 0)
         {
-
+            
         }
         else if ((int)WeaponType.playerWeaponType == 1)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0)&& canShoot)
             {
+                canShoot = false;
+                StartCoroutine(WeaponFireRate(pistolFireRate));
                 pistolAnimation.SetTrigger("Fire");
                 GameObject instantBullet = Instantiate(pistolBullet, transform.position, Quaternion.identity) as GameObject;
                 instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * pistolBulletSpeed);
@@ -35,8 +39,10 @@ public class WeaponBehavior : MonoBehaviour
         }
         else if ((int)WeaponType.playerWeaponType == 2) 
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0)&& canShoot)
             {
+                canShoot = false;
+                StartCoroutine(WeaponFireRate(pistolFireRate));
                 this.GetComponent<Animator>().SetTrigger("Fire");
             }
         }
@@ -55,5 +61,11 @@ public class WeaponBehavior : MonoBehaviour
             this.GetComponent<Animator>().SetIKRotation(AvatarIKGoal.LeftHand, leftHandIKTarget.rotation);
             this.GetComponent<Animator>().SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
         }
+    }
+    IEnumerator WeaponFireRate(float delay) 
+    {
+        yield return new WaitForSeconds(delay);
+        canShoot = true;
+
     }
 }
