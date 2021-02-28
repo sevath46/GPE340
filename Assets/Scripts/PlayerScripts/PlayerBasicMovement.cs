@@ -100,5 +100,10 @@ public class PlayerBasicMovement : MonoBehaviour
             assaultRifle.SetActive(true);
             Destroy(col.gameObject);
         }
+        if (col.gameObject.tag == "HealthPack") 
+        {
+            Destroy(col.gameObject);
+            PlayerStats.currHealth++;
+        }
     }
 }
