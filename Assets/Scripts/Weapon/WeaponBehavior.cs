@@ -5,8 +5,7 @@ using UnityEngine;
 public class WeaponBehavior : MonoBehaviour
 {
     public bool canShoot;
-    public string currWeapon;
-    public GameObject pistolBullet, rifleBullet;
+    public GameObject pistolBullet, rifleBullet, pistolBarrel, rifleBarrel;
     public float pistolBulletSpeed, rifleBulletSpeed, pistolFireRate, assaultRifleFireRate;
     public Animator pistolAnimation;
 
@@ -15,7 +14,6 @@ public class WeaponBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currWeapon = "none";
         canShoot = true;
     }
 
@@ -33,17 +31,20 @@ public class WeaponBehavior : MonoBehaviour
                 canShoot = false;
                 StartCoroutine(WeaponFireRate(pistolFireRate));
                 pistolAnimation.SetTrigger("Fire");
-                GameObject instantBullet = Instantiate(pistolBullet, transform.position, Quaternion.identity) as GameObject;
+                GameObject instantBullet = Instantiate(pistolBullet, pistolBarrel.transform.position, Quaternion.identity) as GameObject;
                 instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * pistolBulletSpeed);
             }
         }
         else if ((int)WeaponType.playerWeaponType == 2) 
         {
-            if (Input.GetKey(KeyCode.Mouse0)&& canShoot)
+            if (Input.GetKeyDown(KeyCode.Mouse0)&& canShoot)
             {
                 canShoot = false;
-                StartCoroutine(WeaponFireRate(pistolFireRate));
-                this.GetComponent<Animator>().SetTrigger("Fire");
+                StartCoroutine(WeaponFireRate(assaultRifleFireRate));
+                for (int i = 0; i < 3; i++)
+                {
+                    StartCoroutine(WeaponBulletRate(0.1f));
+                }
             }
         }
     }
@@ -66,6 +67,13 @@ public class WeaponBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         canShoot = true;
+    }
+    IEnumerator WeaponBulletRate(float delay) 
+    {
 
+        yield return new WaitForSeconds(delay);
+        this.GetComponent<Animator>().SetTrigger("Fire");
+        GameObject instantBullet = Instantiate(rifleBullet, rifleBarrel.transform.position, Quaternion.identity) as GameObject;
+        instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * rifleBulletSpeed);
     }
 }

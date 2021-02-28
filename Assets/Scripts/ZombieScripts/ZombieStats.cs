@@ -16,9 +16,9 @@ public class ZombieStats : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        if (health == 0) 
+        if (health < 1) 
         {
             GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(Respawn());
