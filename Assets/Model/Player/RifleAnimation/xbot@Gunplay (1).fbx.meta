@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: cd946ac13fb7168429d51378149d804f
+guid: ec386c3d49da6e340a4cfffa35fc0fea
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
+    second: Gunplay (1)
+  - first:
+      74: 417175240684547266
     second: Gunplay
   externalObjects: {}
   materials:
@@ -51,7 +54,7 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -542,13 +545,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: xbot@Gunplay(Clone)
+    - name: xbot@Gunplay (1)(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: xbot@Gunplay(Clone)
+      parentName: xbot@Gunplay (1)(Clone)
       position: {x: 0.00007373281, y: 1.018205, z: 0.009875136}
       rotation: {x: 0.0635363, y: 0.04918359, z: 0.014458442, w: 0.99666196}
       scale: {x: 1, y: 1, z: 1}

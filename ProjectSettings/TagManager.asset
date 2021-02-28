@@ -8,6 +8,7 @@ TagManager:
   - Pistol
   - Enemy
   - AssaultRifle
+  - HealthPack
   layers:
   - Default
   - TransparentFX
