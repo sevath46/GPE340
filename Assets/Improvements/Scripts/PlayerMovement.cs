@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        //grab animator at start
         animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
+        //base on Horizontal and vertical key presses in unity, determines which way we move as well as affects the blend values of Hoorizontal and Vertical. 
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         input = Vector3.ClampMagnitude(input, 1f);
         input *= currSpeed;
