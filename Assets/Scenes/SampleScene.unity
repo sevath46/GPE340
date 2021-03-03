@@ -1159,6 +1159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: First_aid_kit_6_Mat
       objectReference: {fileID: 0}
+    - target: {fileID: 1854425252707494, guid: b1f79bc72c7086542a923e6545cc40d2, type: 3}
+      propertyPath: m_TagString
+      value: HealthPack
+      objectReference: {fileID: 0}
     - target: {fileID: 4689345990570408, guid: b1f79bc72c7086542a923e6545cc40d2, type: 3}
       propertyPath: m_RootOrder
       value: 1
