@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         input *= currSpeed;
         animator.SetFloat("Horizontal", input.x);
         animator.SetFloat("Vertical", input.z);
+        //If user wishes to run.
         if (Input.GetKey(KeyCode.LeftShift))
         {
             currSpeed = runSpeed;
