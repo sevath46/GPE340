@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public GameObject assaultRifle, weaponSpawn, currWeapon;
+    public GameObject assaultRifle, weaponSpawn, currWeapon, pistol;
     public  bool isWeaponChange;
     public EquippedWeapon weaponType;
     public Animator animate;
@@ -52,11 +52,16 @@ public class Weapon : MonoBehaviour
                 isWeaponChange = false;
                 break;
             case 1:
+                animate.SetInteger("Weapon", 1);
                 isWeaponChange = false;
+                Destroy(currWeapon);
+                currWeapon = Instantiate(pistol, weaponSpawn.transform.position, weaponSpawn.transform.rotation);
+                getIK(currWeapon);
                 break;
             case 2:
                 animate.SetInteger("Weapon", 2);
                 isWeaponChange = false;
+                Destroy(currWeapon);
                 currWeapon = Instantiate(assaultRifle, weaponSpawn.transform.position, weaponSpawn.transform.rotation);
                 getIK(currWeapon);
                 break;
