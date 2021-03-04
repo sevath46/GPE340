@@ -17,6 +17,6 @@ public class Health : MonoBehaviour
     void Update()
     {
         //set the value based on the variable of StatHealth inside script PlayerStats.
-        slider.value = Player.health;
+
     }
 }
