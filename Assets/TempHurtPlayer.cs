@@ -15,7 +15,7 @@ public class TempHurtPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            PlayerStats.currHealth--;
+            this.GetComponent<Player>().health--;
         }
     }
 }

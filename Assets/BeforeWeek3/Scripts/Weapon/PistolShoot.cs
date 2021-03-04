@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PistolShoot : MonoBehaviour
 {
+    public GameObject barrel;
     public float bulletSpeed;
     private Animator animate;
     public GameObject bullet;
@@ -19,7 +20,7 @@ public class PistolShoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0)) 
         {
             animate.SetTrigger("Fire");
-            GameObject instantBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
+            GameObject instantBullet = Instantiate(bullet, barrel.transform.position, Quaternion.identity) as GameObject;
             instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
 
         }

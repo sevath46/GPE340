@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Humanoid : MonoBehaviour
 {
-    public int health;
-    public float movingSpeed;
+    public float movingSpeed, health, maxHealth;
+
+    void Start() 
+    {
+        maxHealth = health;
+    }
 }
