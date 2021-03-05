@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Enemy : Humanoid
 {
-    Vector3 originalPos;
     public float respawnTime;
     // Start is called before the first frame update
     void Start()
     {
-        originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         maxHealth = health;
         ragDoll(true);
     }
@@ -19,21 +17,16 @@ public class Enemy : Humanoid
     {
         if (health <= 0)
         {
+            //TEMPORARY PERMAKILL
+            Destroy(this.gameObject);
+            /*
             ragDoll(false);
             GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(Respawn());
             GetComponent<Rigidbody>().useGravity = false;
+            */
 
         }
-    }
-    IEnumerator Respawn()
-    {
-        yield return new WaitForSeconds(respawnTime);
-        health = maxHealth;
-        gameObject.transform.position = originalPos;
-        GetComponent<CapsuleCollider>().enabled = true;
-        GetComponent<Rigidbody>().useGravity = true;
-        ragDoll(true);
     }
     public void ragDoll(bool status) 
     {

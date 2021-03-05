@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemySpawn : MonoBehaviour
+{
+    public int spawnDelay, maxActiveEnemies;
+    public GameObject enemy;
+    public static int currentActiveEnemies;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        InvokeRepeating("SpawnEnemy", 0f, spawnDelay);
+    }
+
+    private void SpawnEnemy() 
+    {
+        if (currentActiveEnemies >= maxActiveEnemies)
+        {
+            return;
+        }
+        else 
+        {
+            Instantiate(enemy, this.transform.position, Quaternion.identity);
+            currentActiveEnemies++;
+        }
+    }
+}

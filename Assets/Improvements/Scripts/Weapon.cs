@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
             WeaponChange();
         }
     }
-
+    //Attachess our model hands to the weaponns.
     protected virtual void OnAnimatorIK()
     {
         animate.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKTarget.position);
@@ -42,6 +42,7 @@ public class Weapon : MonoBehaviour
         Pistol = 1,
         AssaultRifle = 2,
     }
+    //When the weapon changes, we set the appropriate variables accross the board.
     public void WeaponChange() 
     {
         switch ((int)weaponType)
@@ -62,7 +63,7 @@ public class Weapon : MonoBehaviour
                 animate.SetInteger("Weapon", 2);
                 isWeaponChange = false;
                 Destroy(currWeapon);
-                currWeapon = Instantiate(assaultRifle, weaponSpawn.transform.position, Quaternion.identity);
+                currWeapon = Instantiate(assaultRifle, weaponSpawn.transform.position, Quaternion.identity) as GameObject;
                 getIK(currWeapon);
                 break;
             default:
@@ -70,12 +71,14 @@ public class Weapon : MonoBehaviour
                 break;
         }
     }
+    //Grabs the IK hands from current weapon
     public void getIK(GameObject target) 
     {
         target.transform.parent = weaponSpawn.transform;
         leftHandIKTarget = target.transform.GetChild(0);
         rightHandIKTarget = target.transform.GetChild(1);
     }
+    //Change enum in-game when needed via pickup script.
     public void weaponChange(string target) 
     {
         if (target == "Pistol") 

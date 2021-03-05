@@ -20,8 +20,9 @@ public class Bullet : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy") 
         {
-            col.gameObject.GetComponent<Enemy>().health -= damage;
+            col.gameObject.GetComponent<Enemy>().health--;
             Destroy(this.gameObject);
+            EnemySpawn.currentActiveEnemies--;
         }
     }
 }
