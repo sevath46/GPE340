@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 746dcd6456d13574db7ed2843bc31e5d, type: 2}
 --- !u!1 &83933377
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &215184837
 Transform:
@@ -888,7 +888,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1130937176
 BoxCollider:
@@ -1324,8 +1324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cada063445ea4664f84e111757bf8de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActiveEnemies: 0
-  spawnDelay: 5
+  spawnDelay: 3
   maxActiveEnemies: 1
   enemy: {fileID: 4223328658514042896, guid: 5c6b6e2376e317b4da808ffced4c528f, type: 3}
 --- !u!114 &1481298826
@@ -1372,7 +1371,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1573341639
 BoxCollider:
@@ -1705,7 +1704,7 @@ MonoBehaviour:
   currWeapon: {fileID: 0}
   pistol: {fileID: 5195433463203961125, guid: 530d69c87ecbaf5468615d7c1d398171, type: 3}
   isWeaponChange: 0
-  weaponType: 0
+  weaponType: 2
   animate: {fileID: 1719985371}
   leftHandIKTarget: {fileID: 0}
   rightHandIKTarget: {fileID: 0}
@@ -2034,7 +2033,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &2122790735
 BoxCollider:
@@ -2107,7 +2106,7 @@ Transform:
   m_GameObject: {fileID: 2122790734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 174.2, y: -3.7888927, z: 172.2}
-  m_LocalScale: {x: 10, y: 0.1, z: 10}
+  m_LocalScale: {x: 25, y: 0.1, z: 25}
   m_Children:
   - {fileID: 215184837}
   m_Father: {fileID: 0}

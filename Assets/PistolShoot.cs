@@ -22,6 +22,7 @@ public class PistolShoot : MonoBehaviour
             animate.SetTrigger("Fire");
             GameObject instantBullet = Instantiate(bullet, barrel.transform.position, Quaternion.identity) as GameObject;
             instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+            //TODO: Destroy bullet after x time.
 
         }
     }

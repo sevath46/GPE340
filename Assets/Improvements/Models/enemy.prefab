@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 4223328658521428584}
   - component: {fileID: 4223328656718014638}
   - component: {fileID: 1384624301044164023}
+  - component: {fileID: -6831358070717788099}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -290,7 +291,7 @@ Animator:
   m_GameObject: {fileID: 4223328658514042896}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5917c0e93d180a842b61d1ebc62a195c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a6537e20369808428d1bc27d6d744ab, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -329,6 +330,29 @@ MonoBehaviour:
   health: 10
   maxHealth: 0
   respawnTime: 50
+  target: {fileID: 0}
+--- !u!195 &-6831358070717788099
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223328658514042896}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4223328658514042898
 GameObject:
   m_ObjectHideFlags: 0
