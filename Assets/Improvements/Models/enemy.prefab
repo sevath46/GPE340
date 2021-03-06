@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 4223328656718014638}
   - component: {fileID: 1384624301044164023}
   - component: {fileID: -6831358070717788099}
+  - component: {fileID: 7396555365525406730}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -341,7 +342,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -353,6 +354,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7396555365525406730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223328658514042896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7abdf86e046b743b91a367d9afe52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assaultRifle: {fileID: 4624405448667099011, guid: 0abaf2d2aff198e4cabd77bc91c3dae0, type: 3}
+  weaponSpawn: {fileID: 6840584185306840099}
+  currWeapon: {fileID: 0}
+  pistol: {fileID: 5195433463203961125, guid: 530d69c87ecbaf5468615d7c1d398171, type: 3}
+  isWeaponChange: 1
+  weaponType: 2
+  animate: {fileID: 4223328658521428584}
+  leftHandIKTarget: {fileID: 0}
+  rightHandIKTarget: {fileID: 0}
 --- !u!1 &4223328658514042898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2028,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4223328658513952136}
+  - {fileID: 1209990008508009912}
   m_Father: {fileID: 4223328658513952200}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2164,3 +2187,33 @@ Transform:
   m_Father: {fileID: 4223328658513952232}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6840584185306840099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1209990008508009912}
+  m_Layer: 0
+  m_Name: WeaponLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1209990008508009912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6840584185306840099}
+  m_LocalRotation: {x: -0.70710677, y: 0.000000054016713, z: -0.0000000019347315, w: 0.7071068}
+  m_LocalPosition: {x: -0.45999965, y: -0.11999511, z: 0.209998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4223328658513952212}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 90}

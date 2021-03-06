@@ -14,7 +14,7 @@ public class Pickup : MonoBehaviour
     }
     void OnTriggerEnter(Collider col) 
     {
-        if (col.gameObject.tag == "Player") 
+        if (col.gameObject.tag == "Player" || col.gameObject.tag == "Enemy") 
         {
             switch ((int)curItem) 
             {

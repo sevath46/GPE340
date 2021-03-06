@@ -45,8 +45,7 @@ public class Enemy : Humanoid
     }
     private void OnAnimatorMove()
     {
-        myNavMeshAgent.velocity = animate.velocity;
-        Vector3 desiredVelocity = Vector3.MoveTowards(desiredVelocity, myNavMeshAgent.desiredVelocity, myNavMeshAgent.acceleration * Time.deltaTime);
+        Vector3 desiredVelocity = Vector3.MoveTowards(myNavMeshAgent.desiredVelocity, target.transform.position, myNavMeshAgent.acceleration * Time.deltaTime);
         Vector3 input = transform.InverseTransformDirection(desiredVelocity);
     }
     public void ragDoll(bool status) 
