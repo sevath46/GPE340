@@ -56,14 +56,14 @@ public class Weapon : MonoBehaviour
                 animate.SetInteger("Weapon", 1);
                 isWeaponChange = false;
                 Destroy(currWeapon);
-                currWeapon = Instantiate(pistol, weaponSpawn.transform.position, Quaternion.identity);
+                currWeapon = Instantiate(pistol, weaponSpawn.transform.position, weaponSpawn.transform.rotation);
                 getIK(currWeapon);
                 break;
             case 2:
                 animate.SetInteger("Weapon", 2);
                 isWeaponChange = false;
                 Destroy(currWeapon);
-                currWeapon = Instantiate(assaultRifle, weaponSpawn.transform.position, Quaternion.identity) as GameObject;
+                currWeapon = Instantiate(assaultRifle, weaponSpawn.transform.position, weaponSpawn.transform.rotation) as GameObject;
                 getIK(currWeapon);
                 break;
             default:

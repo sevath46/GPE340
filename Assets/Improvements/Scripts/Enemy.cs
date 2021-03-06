@@ -29,18 +29,11 @@ public class Enemy : Humanoid
     // Update is called once per frame
     void LateUpdate()
     {
-
         if (health <= 0)
         {
-            //TEMPORARY PERMAKILL
-            Destroy(this.gameObject);
-            /*
             ragDoll(false);
-            GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(Respawn());
-            GetComponent<Rigidbody>().useGravity = false;
-            */
-
+            myNavMeshAgent.enabled = false;
         }
     }
     private void OnAnimatorMove()
@@ -66,5 +59,11 @@ public class Enemy : Humanoid
                 childRBs[i].isKinematic = false;
             }
         }
+    }
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnTime);
+        EnemySpawn.currentActiveEnemies--;
+        Destroy(this.gameObject);
     }
 }

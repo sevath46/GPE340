@@ -21,10 +21,11 @@ public class EnemySpawn : MonoBehaviour
         {
             return;
         }
-        else 
+        else if (currentActiveEnemies < maxActiveEnemies)
         {
             Instantiate(enemy, this.transform.position, Quaternion.identity);
             currentActiveEnemies++;
+            return;
         }
     }
 }
