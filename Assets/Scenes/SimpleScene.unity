@@ -2039,12 +2039,20 @@ PrefabInstance:
       value: 280.039
       objectReference: {fileID: 0}
     - target: {fileID: 1719985374, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
+      propertyPath: isPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719985374, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1719985374, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
       propertyPath: currWeapon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719985374, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
+      propertyPath: weaponType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1719985374, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
       propertyPath: weaponSpawn

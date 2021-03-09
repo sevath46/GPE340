@@ -27,15 +27,26 @@ public class Weapon : MonoBehaviour
     //Attaches our model hands to the weapons.
     protected virtual void OnAnimatorIK()
     {
-        animate.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKTarget.position);
-        animate.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
-        animate.SetIKRotation(AvatarIKGoal.RightHand, rightHandIKTarget.rotation);
-        animate.SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
+        if (!currWeapon)
+        {
+            animate.SetIKPositionWeight(AvatarIKGoal.RightHand, 0f);
+            animate.SetIKRotationWeight(AvatarIKGoal.RightHand, 0f);
+            animate.SetIKRotationWeight(AvatarIKGoal.LeftHand, 0f);
+            animate.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0f);
+            animate.SetInteger("Weapon", 0);
+        }
+        else
+        {
+            animate.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKTarget.position);
+            animate.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
+            animate.SetIKRotation(AvatarIKGoal.RightHand, rightHandIKTarget.rotation);
+            animate.SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
 
-        animate.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKTarget.position);
-        animate.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
-        animate.SetIKRotation(AvatarIKGoal.LeftHand, leftHandIKTarget.rotation);
-        animate.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
+            animate.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIKTarget.position);
+            animate.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
+            animate.SetIKRotation(AvatarIKGoal.LeftHand, leftHandIKTarget.rotation);
+            animate.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
+        }
     }
     public enum EquippedWeapon
     {
@@ -49,8 +60,10 @@ public class Weapon : MonoBehaviour
         switch ((int)weaponType)
         {
             case 0:
-                leftHandIKTarget = null;
-                rightHandIKTarget = null;
+                if (currWeapon) 
+                {
+                    Destroy(currWeapon.gameObject);
+                }
                 isWeaponChange = false;
                 break;
             case 1:
@@ -94,9 +107,13 @@ public class Weapon : MonoBehaviour
         {
             weaponType = EquippedWeapon.Pistol;
         }
-        else if (target == "AssaultRifle") 
+        else if (target == "AssaultRifle")
         {
             weaponType = EquippedWeapon.AssaultRifle;
+        }
+        else if (target == "None") 
+        {
+            weaponType = EquippedWeapon.None;
         }
         isWeaponChange = true;
         return;

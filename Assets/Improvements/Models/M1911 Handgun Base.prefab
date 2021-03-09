@@ -68,9 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0f892cf55210f4e9d931f100a1b7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootRate: 0
   barrel: {fileID: 5195646851432306469}
-  bulletSpeed: 450
   bullet: {fileID: 1122964723992546, guid: 75975760d805cb74b93c3a250c5e7404, type: 3}
+  bulletSpeed: 450
+  animate: {fileID: 3100753788899549598}
 --- !u!95 &3100753788899549598
 Animator:
   serializedVersion: 3
