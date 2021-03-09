@@ -16,6 +16,9 @@ public class ARShoot : WeaponShoot
         if (Input.GetKeyDown(KeyCode.Mouse0) && this.gameObject.tag == "Player")
         {
             animate.SetTrigger("Fire");
+            GameObject instantBullet = Instantiate(bullet, barrel.transform.position, Quaternion.identity) as GameObject;
+            instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+            Destroy(instantBullet, 2.0f);
         }
     }
 }

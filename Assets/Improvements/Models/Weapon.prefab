@@ -91,6 +91,7 @@ Transform:
   - {fileID: 4356622895013538467}
   - {fileID: 3937573882597510676}
   - {fileID: 7950057911178961166}
+  - {fileID: 9205062977683971222}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,10 +108,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootRate: 0
-  barrel: {fileID: 0}
-  bullet: {fileID: 0}
-  bulletSpeed: 0
+  barrel: {fileID: 5288485758594319187}
+  bullet: {fileID: 1122964723992546, guid: 75975760d805cb74b93c3a250c5e7404, type: 3}
+  bulletSpeed: 450
   animate: {fileID: 0}
+--- !u!1 &5288485758594319187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9205062977683971222}
+  m_Layer: 0
+  m_Name: Barrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9205062977683971222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5288485758594319187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5693, y: 0.1065, z: 0.072}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2469904743113802904}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3348839523142488749
 PrefabInstance:
   m_ObjectHideFlags: 0
