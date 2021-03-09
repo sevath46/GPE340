@@ -13,7 +13,7 @@ public class WeaponShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animate = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
