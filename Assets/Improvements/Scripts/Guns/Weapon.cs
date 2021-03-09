@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     public EquippedWeapon weaponType;
     public Animator animate;
     public Transform leftHandIKTarget, rightHandIKTarget;
+    public bool isPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class Weapon : MonoBehaviour
             WeaponChange();
         }
     }
-    //Attachess our model hands to the weaponns.
+    //Attaches our model hands to the weapons.
     protected virtual void OnAnimatorIK()
     {
         animate.SetIKPosition(AvatarIKGoal.RightHand, rightHandIKTarget.position);
@@ -42,7 +43,7 @@ public class Weapon : MonoBehaviour
         Pistol = 1,
         AssaultRifle = 2,
     }
-    //When the weapon changes, we set the appropriate variables accross the board.
+    //When the weapon changes, we set the appropriate variables across the board.
     public void WeaponChange() 
     {
         switch ((int)weaponType)
@@ -77,6 +78,14 @@ public class Weapon : MonoBehaviour
         target.transform.parent = weaponSpawn.transform;
         leftHandIKTarget = target.transform.GetChild(0);
         rightHandIKTarget = target.transform.GetChild(1);
+        if (isPlayer)
+        {
+            target.gameObject.tag = "Player";
+        }
+        else 
+        {
+            target.gameObject.tag = "Enemy";
+        }
     }
     //Change enum in-game when needed via pickup script.
     public void weaponChange(string target) 

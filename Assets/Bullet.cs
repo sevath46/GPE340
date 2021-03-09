@@ -22,7 +22,6 @@ public class Bullet : MonoBehaviour
         {
             col.gameObject.GetComponent<Enemy>().health--;
             Destroy(this.gameObject);
-            EnemySpawn.currentActiveEnemies--;
         }
     }
 }

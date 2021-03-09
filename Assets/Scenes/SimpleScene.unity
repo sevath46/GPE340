@@ -1286,7 +1286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1481298825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,32 +1589,6 @@ Transform:
 --- !u!1 &1719985368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3002611769751116029, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
-  m_PrefabInstance: {fileID: 3002611768048024613}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1719985369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719985368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27388574a842b643b3f59b124d8077c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assaultRifle: {fileID: 4476574629198302569, guid: 8179dc5251604cf4f8a008e3525e9cad, type: 3}
-  weaponSpawn: {fileID: 844831314}
-  currWeapon: {fileID: 0}
-  pistol: {fileID: 0}
-  isWeaponChange: 0
-  weaponType: 0
-  animate: {fileID: 1719985371}
-  leftHandIKTarget: {fileID: 0}
-  rightHandIKTarget: {fileID: 0}
---- !u!95 &1719985371 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3002611769760639621, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
   m_PrefabInstance: {fileID: 3002611768048024613}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1928177038
@@ -2065,6 +2039,10 @@ PrefabInstance:
       value: 280.039
       objectReference: {fileID: 0}
     - target: {fileID: 1719985374, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719985374, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
       propertyPath: currWeapon
       value: 
       objectReference: {fileID: 0}
@@ -2124,6 +2102,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Motions Dummy
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1719985374, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9cd1854056d3294b9748d60a4e3a520, type: 3}
