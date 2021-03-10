@@ -5,7 +5,6 @@ using UnityEngine;
 public class ARShoot : WeaponShoot
 {
     public float timeNextShotIsReady, shotsPerMinute;
-    public int shotsFired;
     // Start is called before the first frame update
 
     void Awake() { timeNextShotIsReady = Time.time; }
@@ -13,13 +12,12 @@ public class ARShoot : WeaponShoot
     {
 
         animate = this.transform.root.GetComponent<Animator>();
-        canShoot = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && this.gameObject.tag == "Player" && canShoot)
+        if (Input.GetKey(KeyCode.Mouse0) && this.gameObject.tag == "Player")
         {
             if (Time.time > timeNextShotIsReady)
             {

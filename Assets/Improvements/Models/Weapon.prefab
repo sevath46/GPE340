@@ -107,15 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a629cafbce25b6e4e9552787f5390f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootRate: 0
   barrel: {fileID: 5288485758594319187}
   bullet: {fileID: 1122964723992546, guid: 75975760d805cb74b93c3a250c5e7404, type: 3}
   bulletSpeed: 450
   animate: {fileID: 0}
-  canShoot: 1
   timeNextShotIsReady: 5
   shotsPerMinute: 600
-  shotsFired: 5
 --- !u!1 &5288485758594319187
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,13 +136,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5288485758594319187}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.14539713, y: -0.51045656, z: 0.0063397093, w: 0.84749836}
   m_LocalPosition: {x: -0.5693, y: 0.1065, z: 0.072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2469904743113802904}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -13.885, y: -63.274, z: 9.438}
 --- !u!1001 &3348839523142488749
 PrefabInstance:
   m_ObjectHideFlags: 0
