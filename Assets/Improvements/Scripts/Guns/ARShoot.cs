@@ -17,7 +17,7 @@ public class ARShoot : WeaponShoot
         {
             animate.SetTrigger("Fire");
             GameObject instantBullet = Instantiate(bullet, barrel.transform.position, Quaternion.identity) as GameObject;
-            instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+            instantBullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * bulletSpeed);
             Destroy(instantBullet, 2.0f);
         }
     }
