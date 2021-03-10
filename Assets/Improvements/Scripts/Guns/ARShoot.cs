@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class ARShoot : WeaponShoot
 {
+    public float timeNextShotIsReady, shotsPerMinute;
+    public int shotsFired;
     // Start is called before the first frame update
+
+    void Awake() { timeNextShotIsReady = Time.time; }
     void Start()
     {
+
         animate = this.transform.root.GetComponent<Animator>();
+        canShoot = true;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && this.gameObject.tag == "Player")
+        if (Input.GetKey(KeyCode.Mouse0) && this.gameObject.tag == "Player" && canShoot)
         {
-            animate.SetTrigger("Fire");
-            GameObject instantBullet = Instantiate(bullet, barrel.transform.position, Quaternion.identity) as GameObject;
-            instantBullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * bulletSpeed);
-            Destroy(instantBullet, 2.0f);
+            if (Time.time > timeNextShotIsReady)
+            {
+                animate.SetTrigger("Fire");
+                GameObject instantBullet = Instantiate(bullet, barrel.transform.position, Quaternion.identity) as GameObject;
+                instantBullet.GetComponent<Rigidbody>().AddForce(barrel.transform.forward * bulletSpeed);
+                Destroy(instantBullet, 2.0f);
+                timeNextShotIsReady += 60f / shotsPerMinute;
+
+            }
+        }
+        else if (Time.time > timeNextShotIsReady)
+        {
+            timeNextShotIsReady = Time.time;
         }
     }
 }

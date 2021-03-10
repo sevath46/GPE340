@@ -8,17 +8,5 @@ public class WeaponShoot : MonoBehaviour
     public GameObject barrel, bullet;
     public float bulletSpeed;
     public Animator animate;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool canShoot;
 }

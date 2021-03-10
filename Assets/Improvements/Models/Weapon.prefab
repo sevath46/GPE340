@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: -2283698516689450760}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,10 @@ MonoBehaviour:
   bullet: {fileID: 1122964723992546, guid: 75975760d805cb74b93c3a250c5e7404, type: 3}
   bulletSpeed: 450
   animate: {fileID: 0}
+  canShoot: 1
+  timeNextShotIsReady: 5
+  shotsPerMinute: 600
+  shotsFired: 5
 --- !u!1 &5288485758594319187
 GameObject:
   m_ObjectHideFlags: 0
