@@ -19,5 +19,22 @@ public class PistolShoot : WeaponShoot
             instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
             Destroy(instantBullet, 2.0f);
         }
+        else if (this.gameObject.tag == "Enemy")
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            {
+                if (hit.collider.tag == "Player")
+                {
+                    animate.SetTrigger("Fire");
+                    GameObject instantBullet = Instantiate(bullet, barrel.transform.position, Quaternion.identity) as GameObject;
+                    instantBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+                    Destroy(instantBullet, 2.0f);
+                }
+            }
+            else
+            {
+            }
+        }
     }
 }

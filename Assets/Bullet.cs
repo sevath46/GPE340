@@ -23,5 +23,10 @@ public class Bullet : MonoBehaviour
             col.gameObject.GetComponent<Enemy>().health--;
             Destroy(this.gameObject);
         }
+        if (col.gameObject.tag == "Player") 
+        {
+            col.gameObject.GetComponent<Player>().health--;
+            Destroy(this.gameObject);
+        }
     }
 }
