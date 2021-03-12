@@ -7,6 +7,7 @@ public class EnemySpawn : MonoBehaviour
     public int spawnDelay, maxActiveEnemies;
     public GameObject enemy;
     public static int currentActiveEnemies;
+    public GameObject[] spawnLocations;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class EnemySpawn : MonoBehaviour
         }
         else if (currentActiveEnemies < maxActiveEnemies)
         {
-            Instantiate(enemy, this.transform.position, Quaternion.identity);
+            Instantiate(enemy, spawnLocations[Random.Range(0,spawnLocations.Length)].transform.position, Quaternion.identity);
             currentActiveEnemies++;
             return;
         }
