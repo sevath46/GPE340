@@ -12,6 +12,14 @@ public class Enemy : Humanoid
     // Start is called before the first frame update
     void Start()
     {
+        if (Random.Range(0, 3) == 1)
+        {
+            this.GetComponent<Weapon>().weaponChange("Pistol");
+        }
+        else 
+        {
+            this.GetComponent<Weapon>().weaponChange("AssaultRifle");
+        }
         animate = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player");
         myNavMeshAgent = GetComponent<NavMeshAgent>();

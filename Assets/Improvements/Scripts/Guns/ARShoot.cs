@@ -29,9 +29,24 @@ public class ARShoot : WeaponShoot
 
             }
         }
-        else if (Time.time > timeNextShotIsReady)
+        else if (this.gameObject.tag == "Enemy")
         {
-            timeNextShotIsReady = Time.time;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.root.position, transform.root.forward, out hit))
+            {
+                if (hit.collider.tag == "Player")
+                {
+                    animate.SetTrigger("Fire");
+                    GameObject instantBullet = Instantiate(bullet, barrel.transform.position, Quaternion.identity) as GameObject;
+                    instantBullet.GetComponent<Rigidbody>().AddForce(barrel.transform.forward * bulletSpeed);
+                    Destroy(instantBullet, 2.0f);
+                    timeNextShotIsReady += 60f / shotsPerMinute;
+                }
+            }
+            else if (Time.time > timeNextShotIsReady)
+            {
+                timeNextShotIsReady = Time.time;
+            }
         }
     }
 }
