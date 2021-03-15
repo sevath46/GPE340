@@ -7,7 +7,10 @@ public class ARShoot : WeaponShoot
     public float timeNextShotIsReady, shotsPerMinute;
     // Start is called before the first frame update
 
-    void Awake() { timeNextShotIsReady = Time.time; }
+    void Awake() 
+    {
+        timeNextShotIsReady = Time.time; 
+    }
     void Start()
     {
 
@@ -29,7 +32,11 @@ public class ARShoot : WeaponShoot
 
             }
         }
-        else if (this.gameObject.tag == "Enemy")
+        else if (Time.time > timeNextShotIsReady)
+        {
+            timeNextShotIsReady = Time.time;
+        }
+        if (this.gameObject.tag == "Enemy")
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.root.position, transform.root.forward, out hit))
@@ -43,10 +50,10 @@ public class ARShoot : WeaponShoot
                     timeNextShotIsReady += 60f / shotsPerMinute;
                 }
             }
-            else if (Time.time > timeNextShotIsReady)
-            {
-                timeNextShotIsReady = Time.time;
-            }
+        }
+        else if (Time.time > timeNextShotIsReady)
+        {
+            timeNextShotIsReady = Time.time;
         }
     }
 }

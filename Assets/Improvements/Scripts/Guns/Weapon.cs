@@ -10,17 +10,14 @@ public class Weapon : MonoBehaviour
     public Animator animate;
     public Transform leftHandIKTarget, rightHandIKTarget;
     public bool isPlayer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        //Check to see if we are changing our weapon.
         if (isWeaponChange) 
         {
+            //If we are start the weapon change.
             WeaponChange();
         }
     }

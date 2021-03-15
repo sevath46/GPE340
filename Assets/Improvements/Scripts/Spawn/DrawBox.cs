@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DrawBox : MonoBehaviour
 {
+    //Allow Inspector to set scale of the Gizmos.
     public Vector3 scale;
 
     private void OnDrawGizmos() 

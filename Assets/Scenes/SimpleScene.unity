@@ -799,7 +799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDelay: 3
   maxActiveEnemies: 1
-  enemy: {fileID: 0}
+  enemy: {fileID: 4223328658514042896, guid: 5c6b6e2376e317b4da808ffced4c528f, type: 3}
   spawnLocations:
   - {fileID: 1481298824}
   - {fileID: 92630076}

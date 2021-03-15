@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //When the bullet collides with something
     void OnTriggerEnter(Collider col) 
     {
+        //if collision is an enemy.
         if (col.gameObject.tag == "Enemy") 
         {
+            //Grab the health value and decrease it
             col.gameObject.GetComponent<Enemy>().health--;
+            //Destroy the bullet
             Destroy(this.gameObject);
         }
+        //if the collision is a player.
         if (col.gameObject.tag == "Player") 
         {
+            //Grab the health value and decrease it
             col.gameObject.GetComponent<Player>().health--;
+            //Destroy the bullet
             Destroy(this.gameObject);
         }
     }
