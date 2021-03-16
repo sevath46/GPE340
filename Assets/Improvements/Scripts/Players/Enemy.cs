@@ -12,6 +12,7 @@ public class Enemy : Humanoid
     // Start is called before the first frame update
     void Start()
     {
+        //Randomize equipped weapon.
         if (Random.Range(0, 3) == 1)
         {
             this.GetComponent<Weapon>().weaponChange("Pistol");
@@ -20,6 +21,7 @@ public class Enemy : Humanoid
         {
             this.GetComponent<Weapon>().weaponChange("AssaultRifle");
         }
+        //Grab needed variables.
         animate = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player");
         myNavMeshAgent = GetComponent<NavMeshAgent>();
@@ -28,6 +30,7 @@ public class Enemy : Humanoid
     }
     void Update() 
     {
+        //Walk to  the player using NavMesh.
         Vector3 input = myNavMeshAgent.desiredVelocity;
         input = transform.InverseTransformDirection(input);
         animate.SetFloat("Horizontal", input.x);
