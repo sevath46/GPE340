@@ -9,6 +9,7 @@ public class Player : Humanoid
         //if the players health hits 0
         if (health <= 0) 
         {
+            GameManager.GM.AdjustPlayerLives(this.gameObject);
             //Kill the player.
             Destroy(this.gameObject);
         }
