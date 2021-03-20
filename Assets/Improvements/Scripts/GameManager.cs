@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject pauseMenu;
     [SerializeField]
-    private Text playerLivesText;
-    private string playerLivesWording;
+    private Text playerLivesText, weaponEquipText;
+    private string playerLivesWording, weaponEquipWording;
 
     void Awake() 
     {
@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
         //SetPlayerLives Text
         playerLivesWording = playerLivesText.text;
         playerLivesText.text = playerLivesWording + " " + playerLives;
+        //set equiped weapon text.
+        weaponEquipWording = weaponEquipText.text;
+        AdjustEquippedWeapon("None");
+
         //When game first starts, isPaused is false. 
         isPaused = false;
     }
@@ -65,5 +69,9 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<Player>().health = player.GetComponent<Player>().maxHealth;
         }
+    }
+    public void AdjustEquippedWeapon(string weapon) 
+    {
+        weaponEquipText.text = weaponEquipWording + " " + weapon;
     }
 }

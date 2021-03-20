@@ -112,6 +112,10 @@ public class Weapon : MonoBehaviour
         {
             weaponType = EquippedWeapon.None;
         }
+        if (isPlayer)
+        {
+            GameManager.GM.AdjustEquippedWeapon(target);
+        }
         isWeaponChange = true;
         return;
     }
