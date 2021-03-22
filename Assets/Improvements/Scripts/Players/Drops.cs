@@ -40,7 +40,7 @@ public class Drops : MonoBehaviour
             selectedIndex = ~selectedIndex;
         }
 
-        Instantiate(drops[selectedIndex].itemToDrop, transform.position, transform.rotation);
+        Instantiate(drops[selectedIndex].itemToDrop, transform.position, Quaternion.identity);
     }
     void Start() 
     {

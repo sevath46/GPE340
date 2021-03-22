@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Player : Humanoid
 {
+    public GameObject[] spawnLocations;
+    void Start() 
+    {
+        this.GetComponent<Weapon>().weaponChange("Pistol");
+    }
     void Update()
     {
         //if the players health hits 0
@@ -11,7 +16,8 @@ public class Player : Humanoid
         {
             GameManager.GM.AdjustPlayerLives(this.gameObject);
             //Kill the player.
-            Destroy(this.gameObject);
+            this.transform.position = spawnLocations[Random.Range(0, spawnLocations.Length)].transform.position;
+            this.GetComponent<Weapon>().weaponChange("Pistol");
         }
     }
 }

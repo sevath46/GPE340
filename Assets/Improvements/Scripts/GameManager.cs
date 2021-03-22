@@ -65,9 +65,13 @@ public class GameManager : MonoBehaviour
     {
         playerLives--;
         playerLivesText.text = playerLivesWording + " " + playerLives;
-        if (playerLives != 0) 
+        if (playerLives != 0)
         {
             player.GetComponent<Player>().health = player.GetComponent<Player>().maxHealth;
+        }
+        else 
+        {
+            Application.Quit();
         }
     }
     public void AdjustEquippedWeapon(string weapon) 

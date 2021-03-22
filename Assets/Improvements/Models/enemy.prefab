@@ -485,8 +485,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - itemToDrop: {fileID: 0}
-    weight: 0
+  - itemToDrop: {fileID: 388311197649438639, guid: b75c6c42da265c74183b48ff3eb84c4d, type: 3}
+    weight: 1
+  - itemToDrop: {fileID: 672375696267806718, guid: 33476e19dc1ba524ba896d05e39cfe0a, type: 3}
+    weight: 2
+  - itemToDrop: {fileID: 6955605082465501022, guid: aed565611cc10d241bc3de6c5851ae00, type: 3}
+    weight: 3
 --- !u!1 &4223328658514042898
 GameObject:
   m_ObjectHideFlags: 0

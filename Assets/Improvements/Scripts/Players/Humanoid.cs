@@ -8,7 +8,7 @@ public class Humanoid : MonoBehaviour
     public float health, maxHealth;
 
     //At the start of the the script we will keep a variable of the max health as the set health in inspector for all humanoids. 
-    void Start() 
+    void Awake() 
     {
         maxHealth = health;
     }
