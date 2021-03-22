@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         {
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
+            this.GetComponent<SoundManager>().AdjustVolume();
             return pausing = false;
         }
         else
