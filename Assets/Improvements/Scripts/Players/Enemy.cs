@@ -75,6 +75,7 @@ public class Enemy : Humanoid
     {
         yield return new WaitForSeconds(respawnTime);
         EnemySpawn.currentActiveEnemies--;
+        this.GetComponent<Drops>().DropRandomItem();
         Destroy(this.gameObject);
     }
 }

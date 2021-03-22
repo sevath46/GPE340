@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: -6831358070717788099}
   - component: {fileID: 7396555365525406730}
   - component: {fileID: 4288798794264040234}
+  - component: {fileID: -1533089951648664692}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -407,7 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e418ad1e439804487d80eff79b0efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 0
   health: 10
   maxHealth: 0
   respawnTime: 5
@@ -472,6 +472,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1533089951648664692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223328658514042896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0876cda2d137c46902c5af3860a7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - itemToDrop: {fileID: 0}
+    weight: 0
 --- !u!1 &4223328658514042898
 GameObject:
   m_ObjectHideFlags: 0
