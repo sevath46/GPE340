@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
             this.GetComponent<SoundManager>().AdjustVolume();
-            this.GetComponent<WindowManager>().FullScreen();
+            this.GetComponent<WindowManager>().ScreenAdjust();
             return pausing = false;
         }
         else

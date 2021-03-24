@@ -39,7 +39,6 @@ public class ARShoot : WeaponShoot
             {
                 if (hit.collider.tag == "Player")
                 {
-                    Debug.Log("hit");
                     if (Time.time > timeNextShotIsReady)
                     {
                         animate.SetTrigger("Fire");

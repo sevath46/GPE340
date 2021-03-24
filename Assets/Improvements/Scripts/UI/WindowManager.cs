@@ -9,21 +9,23 @@ public class WindowManager : MonoBehaviour
     private Toggle fullScreen;
     public Dropdown resolutionDropdown;
 
+    //Resolutioon list and string list.
+    public List<Resolution> resolutionsList = new List<Resolution>();
+    public List<string> resString = new List<string>();
 
-    private void Awake()
+    void Awake()
     {
-        // Build resolutions
-        resolutionDropdown.ClearOptions();
-        List <Resolution> resolutionsList = new List<Resolution>();
-        for (int index = 0; index < Screen.resolutions.Length; index++)
+        Resolution[] resolutions = Screen.resolutions; //all resolution
+        foreach (Resolution res in resolutions)
         {
-            resolutionsList.Add(string.Format("{0} x {1}", Screen.resolutions[index].width, Screen.resolutions[index].height));
+         resolutionsList.Add(res); //add resolution in list
+            resString.Add(res.width.ToString() + "x" + res.height.ToString()); //string format every resolution
         }
-        resolutionDropdown.AddOptions(resolutionsList);
+        resolutionDropdown.AddOptions(resString);
     }
 
 
-    public void FullScreen() 
+    public void ScreenAdjust() 
     {
         
     }
