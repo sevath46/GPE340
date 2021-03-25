@@ -9,13 +9,15 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField, Tooltip("Master audio mixer.")]
     private AudioMixer audioMixer;
-    public Slider SFXSlider;
+    public Slider masterVolume, SFXVolume, musicVolume;
     [SerializeField, Tooltip("Slider value to Decibel value.")]
     private AnimationCurve volumeVsDecibels;
 
     public void AdjustVolume() 
     {
-        audioMixer.SetFloat("Master Volume", volumeVsDecibels.Evaluate(SFXSlider.value));
+        audioMixer.SetFloat("Master Volume", volumeVsDecibels.Evaluate(masterVolume.value));
+        audioMixer.SetFloat("SFX Volume", volumeVsDecibels.Evaluate(SFXVolume.value));
+        audioMixer.SetFloat("Music Volume", volumeVsDecibels.Evaluate(musicVolume.value));
     }
  /*
   
