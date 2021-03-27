@@ -17,8 +17,7 @@ public class Bullet : MonoBehaviour
             //Grab the health value and decrease it
             col.gameObject.GetComponent<Enemy>().health--;
             //Destroy the bullet
-            GameObject blood = Instantiate(bloodSplatter, this.transform.position, this.transform.rotation) as GameObject;
-            Destroy(blood, bloodSplatTime);
+            BloodSplatter(col.gameObject.transform);
             Destroy(this.gameObject);
         }
         //if the collision is a player.
@@ -27,9 +26,15 @@ public class Bullet : MonoBehaviour
             //Grab the health value and decrease it
             col.gameObject.GetComponent<Player>().health--;
             //Destroy the bullet
-            GameObject blood = Instantiate(bloodSplatter, this.transform.position, this.transform.rotation) as GameObject;
-            Destroy(blood, bloodSplatTime);
+            BloodSplatter(col.gameObject.transform);
             Destroy(this.gameObject);
         }
+    }
+    void BloodSplatter(Transform target) 
+    {
+        GameObject blood = Instantiate(bloodSplatter, this.transform.position, this.transform.rotation) as GameObject;
+        blood.transform.parent = target;
+        Destroy(blood, bloodSplatTime);
+
     }
 }
