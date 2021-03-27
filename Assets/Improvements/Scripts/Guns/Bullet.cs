@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject bloodSplatter;
+    public float bloodSplatTime;
+
+
     //When the bullet collides with something
     void OnTriggerEnter(Collider col) 
     {
@@ -13,6 +17,8 @@ public class Bullet : MonoBehaviour
             //Grab the health value and decrease it
             col.gameObject.GetComponent<Enemy>().health--;
             //Destroy the bullet
+            GameObject blood = Instantiate(bloodSplatter, this.transform.position, this.transform.rotation) as GameObject;
+            Destroy(blood, bloodSplatTime);
             Destroy(this.gameObject);
         }
         //if the collision is a player.
@@ -21,6 +27,8 @@ public class Bullet : MonoBehaviour
             //Grab the health value and decrease it
             col.gameObject.GetComponent<Player>().health--;
             //Destroy the bullet
+            GameObject blood = Instantiate(bloodSplatter, this.transform.position, this.transform.rotation) as GameObject;
+            Destroy(blood, bloodSplatTime);
             Destroy(this.gameObject);
         }
     }
